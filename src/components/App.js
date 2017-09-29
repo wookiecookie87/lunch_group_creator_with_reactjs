@@ -71,6 +71,7 @@ class App extends React.Component {
 	}
 
 	removeMember(id) {
+		//Remove member form the list
 		const request = new Request('/members/'+id, {
 			method: "delete",
 		});

@@ -36,13 +36,13 @@ class GroupInput extends React.Component {
 			<div className="create-group-input row">
 				<div className="col-4 col-sm-3 no-padding-right">
 					<div className="input-group">
-						<input type="text" className="form-control" placeholder="# of Groups" aria-label="# of Groups" 
+						<input type="text" className="form-control" placeholder="# of Groups" aria-label="# of Groups" value={this.state.group_num}
 									onChange={this.handleGroupNumChange.bind(this)} onKeyPress={this.handleKeyPress.bind(this)}/>
 					</div>
 				</div>
 				<div className="col-4 col-sm-3 no-padding-right">
 					<div className="input-group">
-						<input type="text" className="form-control" placeholder="min size" aria-label="min size" 
+						<input type="text" className="form-control" placeholder="min size" aria-label="min size" value={this.state.min_num}
 									onChange={this.handleMinNumChange.bind(this)} onKeyPress={this.handleKeyPress.bind(this)}/>
 					</div>
 				</div>

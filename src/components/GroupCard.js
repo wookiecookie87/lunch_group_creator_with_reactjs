@@ -18,28 +18,32 @@ class GroupCard extends React.Component {
 		const mem_count = Math.floor(members.length / group_count);
 
 		let remainder = members.length % group_count;
-
 		const max_member = mem_count + Math.ceil((remainder) / (remainder + 1));
 		
 		//when groups cannot be created
 		if(mem_count < min) {
 			alert("Groups cannot be created. Mininum number for a group is "+mem_count);
-			this.style = {display: 'none'};
-			this.setState({groups: []});
 			return;
 		}
 		
-		//Create random groups
+		if(mem_count < 1) {
+			alert("Groups cannot be created. Number for groups exceeds number of members");
+			return;
+		}
+
+		//Create groups
 		let groups = [];	
 		for(let i = 0; i < group_count; i++){
 			let group = [];
 			let counter = mem_count;
 			
-			//	
+			/**/	
 			if(remainder > 0){
 				counter = mem_count + 1; 
 			}
+			/**/
 
+			//Run random loop
 			for(let j = 0; j < counter; j++){
 				const rand = Math.floor(Math.random() * members.length);
 				if(members[rand]){
@@ -57,13 +61,14 @@ class GroupCard extends React.Component {
 
 	render () {
 
-		let groups = this.state.groups.map((group) => (
-			<div className="card-wrapper col-6 col-md-4">
+		let groups = this.state.groups.map((group, index) => (
+			<div key={index} className="card-wrapper col-6 col-md-4">
               <div className="card">
                 <GroupList groupMembers={group}/>
               </div>
             </div>
 		));
+
 		return (
 			<div className="group-wrapper">
 				<GroupInput createLunchGroup={this.createLunchGroup.bind(this)}/>
