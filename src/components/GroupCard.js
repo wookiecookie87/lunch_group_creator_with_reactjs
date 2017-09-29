@@ -22,7 +22,7 @@ class GroupCard extends React.Component {
 		
 		//when groups cannot be created
 		if(mem_count < min) {
-			alert("Groups cannot be created. Mininum number for a group is "+mem_count);
+			alert("Groups cannot be created. Possible mininum number for a group is "+mem_count);
 			return;
 		}
 		
