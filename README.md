@@ -21,13 +21,13 @@
 
 ## Installation
 
-git clone https://github.com/wookiecookie87/lunch_group_creator_with_reactjs.git
+`git clone https://github.com/wookiecookie87/lunch_group_creator_with_reactjs.git`
 
-npm install - at the root of the project folder
+`npm install` - at the root of the project folder
 
 ## Running the Project
-npm run start - at the root of the project folder
+`npm run start` - at the root of the project folder
 
-mongd - start mongoDB server
+`mongd` - start mongoDB server
 
 http://localhost:3000/
