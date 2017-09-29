@@ -1,0 +1,102 @@
+@import 'base';
+@import '~bootstrap/scss/bootstrap.scss';
+
+// Some best-practice CSS that's useful for most apps
+// Just remove them if they're not what you want
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+h1 {
+	color: red;
+}
+
+main {
+	height: 100%;
+	padding: 15px 0;
+}
+
+section {
+	height: 100%;
+}
+
+.no-padding-right {
+	padding-right: 0
+}
+
+.add-name-input, .create-group-input {
+	margin-bottom: 2px;
+}
+
+.card-wrapper {
+	margin-bottom: 15px;
+}
+
+.total-name {
+	padding-left: 10px
+}
+
+.list-group button {
+	float: right;
+	font-size: 12px;
+    padding: 4px 8px;
+}
+
+.list-group-item {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.name-list, .card-list {
+	max-height: calc(100% - 68px);
+	overflow: auto;
+}
+
+.group-wrapper, .name-wrapper {
+	height: 100%;
+}
+
+@media (min-width: 577px) {
+	.member-list-wrapper {
+		min-width: 230px;
+	}
+
+	.lunch-group-wrapper {
+	    min-width: 700px;
+	}
+
+	.container-fluid {
+		min-width: 935px;
+	}
+
+} 
+
+@media (max-width: 576px) { 
+	.member-list-wrapper {
+		height: initial;
+	}
+
+	.name-list {
+	    max-height: 173px;
+	    
+	    margin-bottom: 15px;		
+	}
+
+	.lunch-group-wrapper {
+	    height: calc(100% - 252px);
+	}
+ }
