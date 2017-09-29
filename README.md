@@ -33,8 +33,9 @@
 `npm install` - at the root of the project folder
 
 ## Running the Project
-`npm run start` - at the root of the project folder
 
 `mongd` - start mongoDB server
+
+`npm run start` - at the root of the project folder
 
 http://localhost:3000/
