@@ -3,6 +3,7 @@
 1. Shows current people (list)
 
 2. Adds/deletes a person to people (list)
+
    a) A person has only one property: name
 
    b) Prevents adding an existing name
