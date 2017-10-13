@@ -1,4 +1,4 @@
-## A mini project in Reactjs with Express and MongoDB  
+## A mini project in Reactjs/Redux with Express and MongoDB  
 
 1. Shows current people (list)
 
