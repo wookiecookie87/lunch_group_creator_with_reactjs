@@ -12,9 +12,9 @@
 
    a) Options:  
 
-        -  #  of groups
+        -  #  of groups(Required)
 
-        -  Minimum size (of a group)
+        -  Minimum size of a group (Optional)
 
    b) Shows error if you can't make groups
 
