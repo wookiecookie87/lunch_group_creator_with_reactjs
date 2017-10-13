@@ -1,6 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import createStore from './store/createStore'
+
+//import { createStore } from 'redux'
+
 import './styles/main.scss'
 
 // Store Initialization
@@ -13,11 +16,11 @@ const MOUNT_NODE = document.getElementById('root')
 
 let render = () => {
   const App = require('./components/App').default
-  const routes = require('./routes/index').default(store)
+  //const routes = require('./routes/index').default(store)
   
   ReactDOM.render(
-    /*<App store={store} routes={routes} />,*/
-    <App/>,
+    <App store={store}/>,
+    //<App/>,
     MOUNT_NODE
   )
 }

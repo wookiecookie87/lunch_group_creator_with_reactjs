@@ -1,4 +1,8 @@
 import React from 'react'
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
+import {createGroups} from '../store/group_action'
+
 
 class GroupInput extends React.Component {
 	constructor(props, context) {
@@ -13,8 +17,8 @@ class GroupInput extends React.Component {
 			alert("Please enter group number.");
 			return;
 		}
-
-		this.props.createLunchGroup(this.state.group_num, this.state.min_num);
+		var members = this.props.members.slice();
+		this.props.createGroups(this.state.group_num, this.state.min_num, members);
 	}
 
 	handleKeyPress(e) {
@@ -53,5 +57,14 @@ class GroupInput extends React.Component {
 		)
 	}
 }
+function mapStateToProps(state){
+	return {
+		members : state.members,
+	}
+}
 
-export default GroupInput
+function matchDispathToProps(dispatch){
+	return bindActionCreators({createGroups : createGroups}, dispatch)
+}
+
+export default connect(mapStateToProps,matchDispathToProps)(GroupInput)

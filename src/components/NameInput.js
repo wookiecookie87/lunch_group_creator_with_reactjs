@@ -1,4 +1,7 @@
 import React from 'react'
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
+import {addMember} from '../store/member_actions'
 
 class NameInput extends React.Component{
 	constructor(props, context) {
@@ -44,4 +47,18 @@ class NameInput extends React.Component{
 	}
 }
 
-export default NameInput
+
+function mapStateToProps(state){
+	return {
+		members : state.members
+	}
+}
+
+function matchDispathToProps(dispatch){
+	return bindActionCreators(
+		{addMember : addMember,
+	}, dispatch)
+}
+
+
+export default connect(mapStateToProps,matchDispathToProps)(NameInput)

@@ -1,6 +1,6 @@
 import React from 'react';
 // import { browserHistory, Router } from 'react-router'
-// import { Provider } from 'react-redux'
+import { Provider } from 'react-redux'
 import PropTypes from 'prop-types';
 import NameList from './NameList';
 import GroupCard from './GroupCard';
@@ -34,22 +34,7 @@ class App extends React.Component {
 			self.setState({members : json})
 		});
 	}
-
-	componentDidMount() {
-		//Call member list
-		const request = new Request('/members', {
-			method: 'GET', 
-			headers: new Headers({
-				Accept: 'application/json',
-			})
-		});
-		
-		this.fetchData(request)
-		.catch((err) => {
-			console.log(err);
-		});
-	}
-
+	
 	addMemberToList(member) {
 		//Add member to the list
 		const request = new Request('/members', {
@@ -84,16 +69,17 @@ class App extends React.Component {
 
 	render () {
 		return (
-			<main className="row">
-				<section className="member-list-wrapper col-sm-3">
-					<NameInput addMember={this.addMemberToList.bind(this)}/>
-					<div className="total-name">total of {this.state.members.length} members</div>
-					<NameList members={this.state.members} removeMember={this.removeMember.bind(this)} />
-				</section>
-				<section className="lunch-group-wrapper col-sm-9">
-					<GroupCard members={this.state.members} />
-				</section>
-			</main>
+			<Provider store={this.props.store}>
+				<main className="row">
+					<section className="member-list-wrapper col-sm-3">
+						<NameInput/>
+						<NameList/>
+					</section>
+					<section className="lunch-group-wrapper col-sm-9">
+						<GroupCard />
+					</section>
+				</main>
+			</Provider>	
 		)
 	}
 }
