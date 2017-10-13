@@ -1,7 +1,7 @@
 import React from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import {listMembers, deleteMember} from '../store/member_actions'
+import {listMembers, deleteMember} from '../store/members/member_actions'
 
 class NameList extends React.Component {
 	constructor(props, context) {

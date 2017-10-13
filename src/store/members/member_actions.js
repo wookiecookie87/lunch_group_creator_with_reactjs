@@ -1,5 +1,5 @@
-import {fetchPostsRequest, fetchPostsSuccess, fetchPostsError} from '../store/members'
-import {fetchData} from '../module/fetchData'
+import {fetchPostsRequest, fetchPostsSuccess, fetchPostsError} from './members'
+import {fetchData} from '../../module/fetchData'
 
 export const addMember = (member) => {
 	return (dispatch) => {

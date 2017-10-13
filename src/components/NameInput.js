@@ -1,7 +1,7 @@
 import React from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import {addMember} from '../store/member_actions'
+import {addMember} from '../store/members/member_actions'
 
 class NameInput extends React.Component{
 	constructor(props, context) {

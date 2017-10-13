@@ -3,7 +3,7 @@ import GroupList from './GroupList'
 import GroupInput from './GroupInput'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import {initGroups} from '../store/group_action'
+import {initGroups} from '../store/groups/group_action'
 
 
 class GroupCard extends React.Component {
