@@ -66,4 +66,4 @@ function matchDispathToProps(dispatch){
 	return bindActionCreators({createGroups : createGroups}, dispatch)
 }
 
-export default connect(mapStateToProps,matchDispathToProps)(GroupInput)
+export default connect(mapStateToProps,matchDispathToProps)(GroupInput);

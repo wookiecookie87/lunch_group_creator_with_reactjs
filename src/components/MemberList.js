@@ -3,7 +3,7 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import {listMembers, deleteMember} from '../store/members/member_actions'
 
-class NameList extends React.Component {
+class MemberList extends React.Component {
 	constructor(props, context) {
 		super(props, context);
 	}
@@ -46,4 +46,4 @@ function matchDispathToProps(dispatch){
 
 
 
-export default connect(mapStateToProps,matchDispathToProps)(NameList)
+export default connect(mapStateToProps,matchDispathToProps)(MemberList);

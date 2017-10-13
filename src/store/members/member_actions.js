@@ -19,6 +19,7 @@ export const addMember = (member) => {
 			.then((data) => {
 				if(data.length == 0){
 					alert("You cannot add existing name.");
+					dispatch(fetchPostsError())
 				}else{
 					dispatch(fetchPostsSuccess(data))
 				}

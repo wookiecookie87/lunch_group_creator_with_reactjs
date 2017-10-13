@@ -22,13 +22,15 @@ class GroupCard extends React.Component {
 		));
 
 		return (
-			<div className="group-wrapper">
-				<GroupInput/>
-				<div className="total-name" style={this.props.style}>{this.props.groups.groups.length} groups | max {this.props.groups.max} members / min {this.props.groups.min} members</div>
-				<div className="card-list row">
-		            {groups}
-		        </div>
-			</div>
+			<section className="lunch-group-wrapper col-sm-9">	
+				<div className="group-wrapper">
+					<GroupInput/>
+					<div className="total-name" style={this.props.style}>{this.props.groups.groups.length} groups | max {this.props.groups.max} members / min {this.props.groups.min} members</div>
+					<div className="card-list row">
+			            {groups}
+			        </div>
+				</div>
+			</section>
 		);
 
 	}
@@ -37,7 +39,6 @@ class GroupCard extends React.Component {
 
 function mapStateToProps(state){
 	return {
-		//members : state.members,
 		groups : state.groups
 	}
 }

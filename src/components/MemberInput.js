@@ -3,7 +3,7 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import {addMember} from '../store/members/member_actions'
 
-class NameInput extends React.Component{
+class MemberInput extends React.Component{
 	constructor(props, context) {
 		super(props, context);		
 		this.state = {
@@ -61,4 +61,4 @@ function matchDispathToProps(dispatch){
 }
 
 
-export default connect(mapStateToProps,matchDispathToProps)(NameInput)
+export default connect(mapStateToProps,matchDispathToProps)(MemberInput);
