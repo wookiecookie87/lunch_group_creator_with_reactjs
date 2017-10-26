@@ -11,7 +11,6 @@ class MemberInput extends React.Component{
 		};
 	}
 
-
 	handleClick() {
 		if(!this.state.name) {
 			alert("Please enter name.");
@@ -50,7 +49,8 @@ class MemberInput extends React.Component{
 
 function mapStateToProps(state){
 	return {
-		members : state.members
+		members : state.members,
+		msg : state.notification
 	}
 }
 

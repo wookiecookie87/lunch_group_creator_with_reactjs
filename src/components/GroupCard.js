@@ -12,7 +12,6 @@ class GroupCard extends React.Component {
 	}
 
 	render () {
-		console.log(this.props.groups);
 		let groups = this.props.groups.groups.map((group, index) => (
 			<div key={index} className="card-wrapper col-6 col-md-4">
               <div className="card">

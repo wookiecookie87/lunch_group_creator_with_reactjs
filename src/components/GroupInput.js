@@ -58,7 +58,7 @@ class GroupInput extends React.Component {
 }
 function mapStateToProps(state){
 	return {
-		members : state.members,
+		members : state.members
 	}
 }
 

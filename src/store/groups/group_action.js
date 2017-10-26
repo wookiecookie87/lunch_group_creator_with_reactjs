@@ -1,5 +1,8 @@
+import {groupCreateFailed, groupCreateSuccess} from "./groups";
+import {notifyError} from "../notification"
+
 export const createGroups = (group_num, min_num, member_arr) => {
-	//return (dispatch) => {
+	return (dispatch) => {
 		let members = member_arr.slice();
 		const group_count= parseInt(group_num);
 		const min = parseInt(min_num);
@@ -10,17 +13,13 @@ export const createGroups = (group_num, min_num, member_arr) => {
 		
 		//when groups cannot be created
 		if(mem_count < min) {
-			alert("Groups cannot be created. Possible mininum number for a group is "+mem_count);
-			return{
-				type : 'GROUP_CREATE_FAILED'
-			};
+			dispatch(notifyError('EXCEED_MIN', mem_count));
+			return dispatch(groupCreateFailed());
 		}
 		
 		if(mem_count < 1) {
-			alert("Groups cannot be created. Number for groups exceeds number of members");
-			return {
-				type : 'GROUP_CREATE_FAILED'
-			};;
+			dispatch(notifyError('EXCEED_MEBERS'));
+			return dispatch(groupCreateFailed());
 		}
 
 		//Create groups
@@ -49,10 +48,7 @@ export const createGroups = (group_num, min_num, member_arr) => {
 		}
 		//dispatch(fetchPostsSuccess([{id:1, name: "2322"}]));
 		let group = {groups: groups, max:max_member,  min: mem_count};
-		return {
-			type : 'GROUP_CREATED',
-			payload: group 
-		};
-//	}
+		return dispatch(groupCreateSuccess(group));
+	}
 
 }
