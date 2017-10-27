@@ -3,7 +3,7 @@ import {notifyError} from "../notification"
 
 export const createGroups = (group_num, min_num, member_arr) => {
 	return (dispatch) => {
-		let members = member_arr.slice();
+		let members = [...member_arr];
 		const group_count= parseInt(group_num);
 		const min = parseInt(min_num);
 		const mem_count = Math.floor(members.length / group_count);

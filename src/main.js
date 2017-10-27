@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import createStore from './store/createStore'
+import { Provider } from 'react-redux'
 
 //import { createStore } from 'redux'
 
@@ -19,8 +20,9 @@ let render = () => {
   //const routes = require('./routes/index').default(store)
   
   ReactDOM.render(
-    <App store={store}/>,
-    //<App/>,
+    <Provider store={store}>
+      <App />
+    </Provider>,
     MOUNT_NODE
   )
 }

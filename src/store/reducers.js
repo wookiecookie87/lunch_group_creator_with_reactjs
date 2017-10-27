@@ -6,10 +6,8 @@ import notifyReducer from './notification'
 
 export const makeRootReducer = (asyncReducers) => {
   return combineReducers({
-    location: locationReducer,
     members : memberReducer,
     groups : groupReducer,
-    notification : notifyReducer,
     ...asyncReducers
   })
 }

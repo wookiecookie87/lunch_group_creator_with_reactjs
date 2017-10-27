@@ -49,8 +49,7 @@ class MemberInput extends React.Component{
 
 function mapStateToProps(state){
 	return {
-		members : state.members,
-		msg : state.notification
+		members : state.memberss
 	}
 }
 

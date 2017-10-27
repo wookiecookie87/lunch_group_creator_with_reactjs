@@ -8,10 +8,6 @@ class MemberList extends React.Component {
 		super(props, context);
 	}
 
-	componentDidMount(){
-	  	this.props.listMembers()
-	 }
-
 	render () {
 		let members = this.props.members.map((member,  index) => (
 				<li key={member.name} className="list-group-item">
@@ -30,20 +26,5 @@ class MemberList extends React.Component {
 	}
 }
 
-function mapStateToProps(state){
-	return {
-		members : state.members
-	}
-}
 
-function matchDispathToProps(dispatch){
-	return bindActionCreators(
-		{listMembers : listMembers,
-					deleteMember : deleteMember			
-	}, dispatch)
-}
-
-
-
-
-export default connect(mapStateToProps,matchDispathToProps)(MemberList);
+export default MemberList;
