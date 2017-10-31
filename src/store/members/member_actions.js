@@ -6,8 +6,6 @@ import {notifyError} from '../notification'
 
 export const addMember = (member) => {
 	return (dispatch) => {
-  		dispatch(fetchPostsRequest());
-
 		const request = new Request('/members', {
 			method: 'POST', 
 			headers: new Headers({
@@ -25,7 +23,6 @@ export const addMember = (member) => {
 
 export const listMembers = () => {
 	return (dispatch) => {
-  		dispatch(fetchPostsRequest());
 
 		const request = new Request('/members', {
 			method: 'GET', 
@@ -39,8 +36,6 @@ export const listMembers = () => {
 
 export const deleteMember = (id) => {
 	return (dispatch) => {
-  		dispatch(fetchPostsRequest());
-  		
 		const request = new Request('/members/'+id, {
 			method: "delete",
 		});

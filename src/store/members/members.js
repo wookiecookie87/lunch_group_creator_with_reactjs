@@ -25,6 +25,9 @@ export const fetchPostsError = (msg) =>  {
 
 export const fetchData = (request) => {
   return (dispatch) => {
+    
+    dispatch(fetchPostsRequest());
+
      fetch(request)
     .then((response) => {
         if(!response.ok) {
