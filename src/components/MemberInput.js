@@ -47,17 +47,4 @@ class MemberInput extends React.Component{
 }
 
 
-function mapStateToProps(state){
-	return {
-		members : state.memberss
-	}
-}
-
-function matchDispathToProps(dispatch){
-	return bindActionCreators(
-		{addMember : addMember,
-	}, dispatch)
-}
-
-
-export default connect(mapStateToProps,matchDispathToProps)(MemberInput);
+export default MemberInput;

@@ -1,7 +1,4 @@
 import React from 'react'
-import {bindActionCreators} from 'redux'
-import {connect} from 'react-redux'
-import {createGroups} from '../store/groups/group_action'
 
 
 class GroupInput extends React.Component {
@@ -56,14 +53,6 @@ class GroupInput extends React.Component {
 		)
 	}
 }
-function mapStateToProps(state){
-	return {
-		members : state.members
-	}
-}
 
-function matchDispathToProps(dispatch){
-	return bindActionCreators({createGroups : createGroups}, dispatch)
-}
 
-export default connect(mapStateToProps,matchDispathToProps)(GroupInput);
+export default GroupInput;

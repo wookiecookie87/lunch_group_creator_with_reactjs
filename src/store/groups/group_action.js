@@ -35,7 +35,7 @@ export const createGroups = (group_num, min_num, member_arr) => {
 			/**/
 
 			//Run random loop
-			for(let j = 0; j < counter; j++){
+			for(let j = 0; j < min; j++){
 				const rand = Math.floor(Math.random() * members.length);
 				if(members[rand]){
 	                group.push(members[rand]);
